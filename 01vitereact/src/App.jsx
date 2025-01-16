@@ -3,11 +3,11 @@ import Sourya from "./Sourya"
 
 
 function App() {
- 
+  const user="man how are you"
 
   return (
     <>
-   <h1>Sourya aur react</h1>
+   <h1>Sourya aur react {user}</h1>
    <Sourya/>
    </>
   )
