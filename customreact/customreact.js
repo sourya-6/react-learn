@@ -28,3 +28,4 @@ const reactElement={
 const mainContainer=document.querySelector("#root")
 
 customRender(reactElement,mainContainer)
+//function has two arguments react element and the container where to create
