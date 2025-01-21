@@ -8,15 +8,23 @@ function MyApp(){
         <h1>hi guys</h1>
     )
 }
+// const structure=React.createElement(
+//     type:'a',
+//     props:{
+//         href:"https://google.com",
+//         target:"_blank"
+//     },
+//     children:"Click here to go to google"
+// )
 
 
 const Wow=React.createElement(
-    'a',
-    {
+    'a',//type
+    {//props
         href:"https://google.com",
         target:"_blank"
     },
-    "Click here to go to google"
+    "Click here to go to google"//children
     
 )
 
