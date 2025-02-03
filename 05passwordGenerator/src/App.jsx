@@ -27,7 +27,8 @@ function App() {
      setPassword(pass)
  },[length,number,char,setPassword])
 
-
+//useRef is just like useState but useState will re render every time a value have changed.
+//but useRef wouldn't re render until it is updated via setCount.
  const passwordRef=useRef(null);
 
 const copyPasswordToClipboard=useCallback(()=>{
@@ -37,6 +38,13 @@ const copyPasswordToClipboard=useCallback(()=>{
   
 
  },[password])
+
+ //macha useeffect lo main concept vachi sidefunctions like apis ki vadatham manam 
+ //ante if any modifications inf dependencies only cause the useEffect to occur
+ //useEffect runs after render macha
+ //no dependencies ante function mount ayyetapudu matram render avvutundhi
+//  useEffect(() => {}, [dependency]) → Runs when dependency changes.
+// useEffect(() => {}) → Every render ki execute avtadi (not recommended).
 
  useEffect(()=>{
   passwordGenerator()
@@ -53,7 +61,7 @@ const copyPasswordToClipboard=useCallback(()=>{
             value={password}
             className="outline-none bg-amber-50 w-full py-1 px-3"
             placeholder="Password"
-            readOnly
+            readOnly//helps that the password cannot be modified
            ref={passwordRef}
         />
         <button
