@@ -35,7 +35,7 @@ ReactDOM.createRoot(document.getElementById('main')).render(
     <MyApp/>//can be written as MyApp()
 )
 ReactDOM.createRoot(document.getElementById('main')).render( 
-    <App/>//can be written as MyApp()
+    <App/>//can be written as App()
 )
 
 

@@ -11,9 +11,21 @@ function App() {
 
   return (
     <>
-      <h1 className='bg-green-500 p-4 m-4 rounded-xl'>Tailwind Test</h1>
-      <Card username="sourya"  />
-      <Card username="subodh" buttonText="Visit me" />
+      <h1 className='bg-green-500 p-4 m-4 rounded-xl '>Tailwind Test</h1>
+      <div className='display flex flex-wrap'>
+      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      
+      <Card username="subodh" buttonText="Visit me" className=' m-40 p-10' bio="subodh is studying first year"/>
+      </div>
+      
       
     </>
   )

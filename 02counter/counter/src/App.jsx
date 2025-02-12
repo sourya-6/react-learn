@@ -17,19 +17,30 @@ function App() {
         // souryaCounter(counter+1);
         // souryaCounter(counter+1);
         //so we are using a previous state(just like promise) to take previous value after updating it only it goes for next
-        souryaCounter((prevcounter)=>prevcounter+1);//used to update the state dynamically
-        souryaCounter((prevcounter)=>prevcounter+1);
-        souryaCounter((prevcounter)=>prevcounter+1);
-        souryaCounter((prevcounter)=>prevcounter+1);
-        console.log(counter);
+       if (counter<30) {
+         souryaCounter((prevcounter)=>prevcounter+1);//used to update the state dynamically
+         souryaCounter((prevcounter)=>prevcounter+1);
+         souryaCounter((prevcounter)=>prevcounter+1);
+         souryaCounter((prevcounter)=>prevcounter+1);
+         console.log(counter);
+       }
     }
     let  decreaseValue = ()=>{
         //counter--;
-        if(counter>0){
-            counter--;
+        // if(counter>0){
+        //     counter--;
+        // }
+        // souryaCounter(counter-1);
+        // souryaCounter(counter-1);
+        // souryaCounter(counter-1);
+        // souryaCounter(counter-1);
+        if (counter>0) {
+          souryaCounter((e)=>e-1);
+          souryaCounter((e)=>e-1);
+          souryaCounter((e)=>e-1);
+          souryaCounter((e)=>e-1);
+          console.log(counter);
         }
-        souryaCounter(counter);
-        console.log(counter);
     }
 
   return (
