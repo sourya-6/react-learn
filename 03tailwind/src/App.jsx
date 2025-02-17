@@ -14,7 +14,7 @@ function App() {
       <h1 className='bg-green-500 p-4 m-4 rounded-xl '>Tailwind Test</h1>
       <div className='display flex flex-wrap'>
       <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
-      <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
+      <Card username="Hey" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
       <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
       <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>
       <Card username="sourya" className=' m-4 p-10' bio="sourya is a good boy studying third year"/>

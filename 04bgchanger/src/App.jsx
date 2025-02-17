@@ -3,19 +3,10 @@ import { useState } from 'react'
 import './App.css'
 import Red from './components/Red'
 
-function Purple() {
-  document.body.style.backgroundColor="purple"
-}
-function Black(){
-  document.body.style.backgroundColor="black"
-}
-function White(){
-  document.body.style.backgroundColor="white"
-}
 
 function App() {
   
-  const [color,setColor]=useState("olive")
+  const [color,setColor]=useState(Red)
   return (
     
       <div className='w-screen h-screen duration-200 'style={{backgroundColor:color}} >
@@ -26,9 +17,9 @@ function App() {
             <button className='bg-green-500 px-3 py-1 rounded-xl text-white' onClick={()=>{setColor("green")}}>Green</button>
             <button className='bg-purple-500 px-3 py-1 rounded-xl text-white' onClick={()=>{setColor("purple")}}>Purple</button>
             <button className='bg-cyan-500 px-3 py-1 rounded-xl text-white' onClick={()=>{setColor("magenta")}}>Magenta</button>
-            <button className='bg-fuchsia-950 px-3 py-1 rounded-xl text-white' onClick={()=>{setColor("lavender")}}>Lavender</button>
+            <button className='bg-fuchsia-950 px-3 py-1 rounded-xl text-white' onClick={()=>{setColor("Lavender")}}>Lavender</button>
             <button className='bg-black px-3 py-1 rounded-xl text-white' onClick={()=>{setColor("black")}}>Black</button>
-            <button className='bg-white outline-1 px-3 py-1 rounded-xl text-black' onClick={()=>{setColor("White")}}>White</button>
+            <button className='bg-white outline-1 px-3 py-1 rounded-xl text-black' onClick={()=>{setColor("white")}}>White</button>
             </div>
         </div>
       </div>

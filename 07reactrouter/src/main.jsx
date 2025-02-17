@@ -26,10 +26,12 @@ import Github,{githubInfoLoader} from './components/github'
 //     }
 // ])
 
-//Route used to navigate the route where we need to do routing
-//Outlet used to render its child components we are using all these router from layout itself
+//Route used to navigate the route where we need to do routing(yem ledhu just ye route ki velthe ye page render avvali anni)
+//Outlet used to render its child components we are using all these router from layout itself(manaku multiple pages render avvali
+//  without changing the header and footer)
 //under outlet all the home,about,contact will be rendered
-//here we used star to display that 404 - Page Not Found
+//here we used star to display that 404 - Page Not Found(actual ga whenever manaki aa route lo yemi lekapothe manam aa place ni customized page chestunam )
+//loader-used to fetch the data before rendering the component(ante manaki normal rending speed koncham takkuva untundi now we can access without any delay)
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
@@ -37,7 +39,7 @@ const router=createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='Contact' element={<Contact />} />
       <Route path='User/:userid' element={<User />}/>
-      <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+      <Route path="*" element={<h1>404 - Page Not Found<p> lets enjoy</p></h1>} />
       <Route 
       loader={githubInfoLoader}
       path='github' 
