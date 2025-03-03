@@ -17,6 +17,6 @@ export const ThemeProvider=ThemeContext.Provider;
 
 
 //creating a custom hook so that we can access the props whenever we want using these global hook
-export default function useTheme(){
+export default function useModifiedTheme(){
     return useContext(ThemeContext)
 }
