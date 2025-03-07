@@ -20,8 +20,10 @@ export const TodoContext=createContext({
 
 //its a hook where we can use multiple times
 export const useTodo=()=>{
-    useContext(TodoContext);
+    return  useContext(TodoContext);
 }
+//useContext is used to access the context values
 
 //instead of using it separately as TodoContext.Provider while wrapping
 export const TodoContextProvider=TodoContext.Provider;
+//Provider is used to send values to the child components
