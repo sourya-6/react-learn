@@ -13,6 +13,7 @@ export const TodoContext=createContext({
         }
     ],
     addTodo:(todo)=>{},
+    //will not define function here since we are defining methods here and function in app.jsx
     updateTodo:(id,todo)=>{},
     deleteTodo:(id)=>{},
     ToogleTodo:(todo)=>{}

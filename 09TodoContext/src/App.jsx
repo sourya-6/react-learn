@@ -58,7 +58,7 @@ function App() {
 
   useEffect(() => {
     const todos = JSON.parse(localStorage.getItem("todos"));
-
+    //local storage contains two elements getItem(by key) setItem(by key with value)
     if (todos && todos.length > 0) {
       setTodos(todos);
     }
@@ -83,6 +83,8 @@ function App() {
           </div>
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
+            {/* todo.id is used instead of array index because while deleting todo.id can 
+            easily be deleted and no problem will happen */}
             {todos.map((todo) => (
               <div key={todo.id} className="w-full">
                 <TodoItem todo={todo} />
