@@ -16,7 +16,7 @@ const todoSlice=createSlice({
     reducers:{
         addTodo:(state,action)=>{
             const todo = {
-                id:nanoid,
+                id:nanoid(),
                 text:action.payload//automatically detects text so it will be like action.payload.text
             }
             state.todos.push(todo)
@@ -24,7 +24,7 @@ const todoSlice=createSlice({
         removeTodo:(state,action)=>{
             state.todos= state.todos.filter((todo) => todo.id !== action.payload)
             //same here instead of action.payload.id we using action.payload
-        }
+        },
     }
 })
 //exporting as many reducers as there using the actions in the todoSlice
