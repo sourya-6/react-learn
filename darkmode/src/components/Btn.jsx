@@ -1,5 +1,5 @@
-import React from 'react'
-import useTheme  from '../context/ToogleChanger'
+
+import useTheme from "../context/theme";
 
 export default function Btn() {
     const {themeMode,lightTheme,darkTheme}=useTheme();
