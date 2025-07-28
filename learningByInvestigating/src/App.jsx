@@ -3,8 +3,13 @@ import ProfileCard from '../components/ProfileCard';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import ConditionalRendering from '../components/ConditionalRendering';
-import './App.css';
 import RenderingList from '../components/RenderingList';
+import InputBox from '../components/InputBox';
+import './App.css';
+import Todo from '../components/Todo';
+import Stopwatch from '../components/Stopwatch';
+import FocusInput from '../hooks/useRef/FocusInput';
+
 function App() {
   const [greeting, setGreeting] = useState(0);
   const [theme, setTheme] = useState('light');
@@ -21,38 +26,58 @@ function App() {
 
   return (
     <div className={`${theme === 'dark' ? 'dark' : ''}`}>
-      <div className="min-h-screen p-6 bg-white text-black dark:bg-gray-900 dark:text-white transition-all">
-        <button
-          onClick={magic}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4"
-        >
-          Click to see Magic
-        </button>
+      <div className="min-h-screen px-4 py-10 bg-white text-black dark:bg-gray-900 dark:text-white transition-all duration-300">
+        <div className="max-w-4xl mx-auto flex flex-col gap-6">
+          
+          {/* Greeting Section */}
+          <div className="flex flex-col items-center gap-2">
+            <button
+              onClick={magic}
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg hover:brightness-110 transition"
+            >
+              ✨ Click to see Magic
+            </button>
+            <p className="text-2xl font-semibold">Hey: {greeting}</p>
+          </div>
 
-        <p className="text-xl">Hey: {greeting}</p>
+          {/* Profile */}
+          <section className="mt-4">
+            <ProfileCard name="Sourya" rollNo={666} />
+          </section>
 
-        <ProfileCard name="Sourya" rollNo={666} />
+          {/* Card Section */}
+          <section className="grid md:grid-cols-2 gap-6 mt-6">
+            <Card>
+              <h2 className="text-xl font-bold mb-2">This is inside a card</h2>
+              <p className="text-gray-600 dark:text-gray-300">
+                Reusable layout with children!
+              </p>
+            </Card>
+            <Card>
+              <h1 className="text-lg font-semibold">Hey Guys</h1>
+              <div>Welcome to the card layout!</div>
+            </Card>
+          </section>
 
-        <Card>
-          <h2 className="text-2xl font-bold">This is inside a card</h2>
-          <p className="text-gray-500 dark:text-gray-300">
-            Reusable layout with children!
-          </p>
-        </Card>
+          {/* Theme Switch */}
+          <div className="flex items-center justify-between mt-6">
+            <h2 className="text-lg font-medium">Current Theme: <span className="font-bold">{theme}</span></h2>
+            <Button theme={theme} setTheme={setTheme} />
+          </div>
 
-        <Card>
-          {/* <button className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">
-            Click Me
-          </button> */}
-          <h1>Hey Guys</h1>
-          <div>Hey</div>
-        </Card>
+          {/* Other Components */}
+          <div className="grid md:grid-cols-2 gap-6 mt-4">
+            <ConditionalRendering />
+            <RenderingList />
+          </div>
 
-        <h2 className="text-lg mt-6 font-medium">Current Theme: {theme}</h2>
-
-        <Button theme={theme} setTheme={setTheme} />
-          <ConditionalRendering />
-          <RenderingList/>
+          <div className="mt-6">
+            <InputBox />
+          </div>
+          <Todo/>
+          <Stopwatch/>
+          <FocusInput/>
+        </div>
       </div>
     </div>
   );
