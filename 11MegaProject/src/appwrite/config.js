@@ -1,5 +1,5 @@
 import conf from "../conf/conf";
-import { Client, Databases,ID,Storage,Query } from "appwrite";
+import { Client, Databases,ID,Storage,Query, Permission, Role  } from "appwrite";
 
 export class Service{
     client = new Client();
@@ -39,9 +39,9 @@ export class Service{
         }
     }
 
-    async UpdatePost(slug,{title,content,featuredImage,status}){
+    async updatePost(slug,{title,content,featuredImage,status}){
         try {
-            return await this.UpdatePost(
+            return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug,
@@ -57,9 +57,10 @@ export class Service{
         }
     }
 
-    async DeletePost(slug){
+    async deletePost(slug){
+        console.log(slug)
         try {
-            return await this.DeletePost(
+            return await this.databases.deleteDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug
@@ -98,13 +99,14 @@ export class Service{
 
     }
 
-    
+    //upload file is ok
     async uploadFile(file){
         try {
             return await this.bucket.createFile(
                 conf.appwriteBucketId,
                 ID.unique(),
-                file
+                file,
+                [Permission.read(Role.any())]
             );
         } catch (error) {
             console.log("Appwrite serive :: uploadFile :: error", error);
@@ -126,10 +128,11 @@ export class Service{
 
     async getFilePreview(fileId){
         try {
-            return await this.bucket.getFilePreview(
+            return await this.bucket.getFileView(
                 conf.appwriteBucketId,
                 fileId
             );
+            
         } catch (error) {
             console.log("Appwrite serive :: getFilePreview :: error", error);
             return false;
